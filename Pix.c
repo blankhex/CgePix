@@ -351,6 +351,8 @@ static int isLittleEndian(void) {
 
 static void readData(const struct FormatInfo *format, void *data, uint32_t x,
                      CgeColor *value, const CgeColor *palette, int flags) {
+    memset(value, 0, sizeof(*value));
+
     switch (format->type) {
     default: return;
 
