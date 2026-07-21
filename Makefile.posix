@@ -1,0 +1,33 @@
+# POSIX Makefile for CgePix
+
+CC = gcc
+AR = ar
+CFLAGS = -std=c99 -O2 -Wall -Wextra -fPIC
+ARFLAGS = rcs
+TARGET = libCgePix.a
+
+SOURCES = Color.c Pix.c
+OBJECTS = $(SOURCES:.c=.o)
+
+.PHONY: all clean install
+
+all: $(TARGET)
+
+$(TARGET): $(OBJECTS)
+	$(AR) $(ARFLAGS) $@ $^
+
+%.o: %.c CgePix.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJECTS) $(TARGET)
+
+install: $(TARGET)
+	cp $(TARGET) /usr/local/lib/
+	cp CgePix.h /usr/local/include/
+	ldconfig || echo "Run ldconfig manually if needed"
+
+uninstall:
+	rm -f /usr/local/lib/libCgePix.a
+	rm -f /usr/local/include/CgePix.h
+	ldconfig || true
