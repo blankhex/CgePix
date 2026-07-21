@@ -141,6 +141,7 @@ static size_t bestPaletteIndex(CgeColor *color, const CgeColor *palette,
         int32_t delta[4];
 
         switch (palette[i].type) {
+        default: tmpColor = *color; break;
         case CGE_COLOR_HSLA: CgeColorToHSLA(color, &tmpColor); break;
         case CGE_COLOR_HSVA: CgeColorToHSVA(color, &tmpColor); break;
         case CGE_COLOR_RGBA: CgeColorToRGBA(color, &tmpColor); break;
