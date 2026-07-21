@@ -238,6 +238,8 @@ static void hsvToHsl(const CgeColor *color, CgeColor *out) {
 
 void CgeColorToRGBA(const CgeColor *color, CgeColor *out) {
     switch (color->type) {
+    default:
+        /* fallthrough */
     case CGE_COLOR_RGBA:
         *out = *color;
         break;
@@ -259,6 +261,8 @@ void CgeColorToHSVA(const CgeColor *color, CgeColor *out) {
         rgbToHsv(color, out);
         break;
 
+    default:
+        /* fallthrough */
     case CGE_COLOR_HSVA:
         *out = *color;
         break;
@@ -279,6 +283,8 @@ void CgeColorToHSLA(const CgeColor *color, CgeColor *out) {
         hsvToHsl(color, out);
         break;
 
+    default:
+        /* fallthrough */
     case CGE_COLOR_HSLA:
         *out = *color;
         break;
