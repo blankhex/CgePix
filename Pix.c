@@ -20,7 +20,7 @@ struct FormatInfo {
 
 static struct FormatInfo globalInfo[] = {
     /* CGE_PIX_UNKNOWN */
-    { TYPE_UNKNOWN, 0, 0, 0, {}, {}},
+    { TYPE_UNKNOWN, 0, 0, 0, {0,}, {0,}},
     /* CGE_PIX_INDEX1 */
     { TYPE_INDEX, 0, 1, 8, {0x1}, {7, 6, 5, 4, 3, 2, 1, 0,}},
     /* CGE_PIX_INDEX1_LSB */
@@ -40,7 +40,7 @@ static struct FormatInfo globalInfo[] = {
     /* CGE_PIX_R16 */
     { TYPE_IARRAY, 2, 16, 1, {0xFFFF}, {0,}},
     /* CGE_PIX_R32F */
-    { TYPE_FARRAY, 4, 32, 1, {}, {0,}},
+    { TYPE_FARRAY, 4, 32, 1, {0,}, {0,}},
     /* CGE_PIX_RGB8 */
     { TYPE_IARRAY, 3, 8, 3, {0xFF, 0xFF, 0xFF}, {0, 1, 2,}},
     /* CGE_PIX_BGR8 */
@@ -50,9 +50,9 @@ static struct FormatInfo globalInfo[] = {
     /* CGE_PIX_BGR16 */
     { TYPE_IARRAY, 6, 16, 3, {0xFFFF, 0xFFFF, 0xFFFF}, {2, 1, 0,}},
     /* CGE_PIX_RGB32F */
-    { TYPE_FARRAY, 12, 32, 3, {}, {0, 1, 2,}},
+    { TYPE_FARRAY, 12, 32, 3, {0,}, {0, 1, 2,}},
     /* CGE_PIX_BGR32F */
-    { TYPE_FARRAY, 12, 32, 3, {}, {2, 1, 0,}},
+    { TYPE_FARRAY, 12, 32, 3, {0,}, {2, 1, 0,}},
     /* CGE_PIX_RGBA8 */
     { TYPE_IARRAY, 4, 8, 4, {0xFF, 0xFF, 0xFF, 0xFF}, {0, 1, 2, 3,}},
     /* CGE_PIX_BGRA8 */
@@ -70,13 +70,13 @@ static struct FormatInfo globalInfo[] = {
     /* CGE_PIX_ABGR16 */
     { TYPE_IARRAY, 8, 16, 4, {0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF}, {3, 2, 1, 0,}},
     /* CGE_PIX_RGBA32F */
-    { TYPE_FARRAY, 16, 32, 4, {}, {0, 1, 2, 3,}},
+    { TYPE_FARRAY, 16, 32, 4, {0,}, {0, 1, 2, 3,}},
     /* CGE_PIX_BGRA32F */
-    { TYPE_FARRAY, 16, 32, 4, {}, {2, 1, 0, 3,}},
+    { TYPE_FARRAY, 16, 32, 4, {0,}, {2, 1, 0, 3,}},
     /* CGE_PIX_ARGB32F */
-    { TYPE_FARRAY, 16, 32, 4, {}, {1, 2, 3, 0,}},
+    { TYPE_FARRAY, 16, 32, 4, {0,}, {1, 2, 3, 0,}},
     /* CGE_PIX_ABGR32F */
-    { TYPE_FARRAY, 16, 32, 4, {}, {3, 2, 1, 0,}},
+    { TYPE_FARRAY, 16, 32, 4, {0,}, {3, 2, 1, 0,}},
     /* CGE_PIX_RGB565 */
     { TYPE_PACKED, 2, 16, 3, {0x1F, 0x3F, 0x1F,}, {11, 5, 0,}},
     /* CGE_PIX_BGR565 */
