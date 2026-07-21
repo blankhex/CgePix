@@ -352,6 +352,8 @@ static int isLittleEndian(void) {
 static void readData(const struct FormatInfo *format, void *data, uint32_t x,
                      CgeColor *value, const CgeColor *palette, int flags) {
     switch (format->type) {
+    default: return;
+
     case TYPE_INDEX:
         *value = palette[readIndex(format, data, x)];
         break;
@@ -381,6 +383,8 @@ static void writeData(const struct FormatInfo *format, void *data, uint32_t x,
     CgeColorToRGBA(value, &tmp);
 
     switch (format->type) {
+    default: return;
+
     case TYPE_INDEX:
         writeIndex(format, data, x, bestPaletteIndex(&tmp, palette, format));
         break;
