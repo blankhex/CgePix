@@ -1,6 +1,10 @@
 #ifndef CGE_PIX_H
 #define CGE_PIX_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 #include <stddef.h>
 
@@ -169,5 +173,9 @@ void CgePixSetIndex(CgePix *pix, uint32_t x, uint32_t y, uint8_t index);
 void CgePixConvertRow(void *src, int srcFormat, int srcFlags,
                       const CgeColor *srcPalette, void *dest, int destFormat,
                       int destFlags, const CgeColor *destPalette, size_t count);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* CGE_PIX_H */
